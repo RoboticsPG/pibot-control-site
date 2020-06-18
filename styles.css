@@ -1,0 +1,63 @@
+body {
+  background-color: #313131;
+  text-align: center;
+  width: 100%;
+}
+
+#rplogo {
+  width: 10%;
+  height: 10%;
+}
+
+h1, h2, h3, p {
+  color: lightgrey;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #313131;
+  color: lightgrey;
+}
+
+.camFeed {
+  max-height: 0px;
+  -webkit-transition: max-height 1s;
+  transition: max-height 1s;
+  overflow: hidden;
+}
+
+.slider_speed {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 60%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #252723;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */

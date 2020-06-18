@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RP Pi-Bot Control</title>
+        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <meta charset = "UTF-8">
+        <link rel = "stylesheet" type = "text/css" href= "styles.css"/>
+    </head>
+    <body>
+        <div id="header">
+        <img id="rplogo" src="resources\images\RoboticsPG_White.png"/>
+        </div>
+        <h1>PiBot Control</h1>
+        <br>
+
+        <h3>Enter the bot IP Address below:</h3>
+        <input type="text" id="bot-id">
+        <button id="buttonCamera" name="btnVideo" onclick="show_video()">Start Camera</button>
+        <br><br> 
+        <h3>Slide to change speed</h3>
+        <div class="slider_speed">
+            <input type="range" min="-10" max="10" value="5" class="slider" id="speed_slide">
+        </div>
+        <br><br>
+        <h3>Slide to turn</h3>
+        <div class="slider_turn">
+            <input type="range" min="-10" max="10" value="0" class="slider" id="turn_slide">
+        </div>
+        <div id="result"></div>
+        <script src="script.js"></script>
+        <div id="camera_feed" class="camFeed">
+
+        </div>
+        
+        
+    </body>
+</html>
