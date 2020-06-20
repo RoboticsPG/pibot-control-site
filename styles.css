@@ -22,7 +22,6 @@ button {
 
 .camFeed {
   max-height: 0px;
-  -webkit-transition: max-height 1s;
   transition: max-height 1s;
   overflow: hidden;
 }
@@ -33,16 +32,14 @@ button {
 
 .slider {
   -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   width: 60%;
   height: 25px;
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: .2s;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider::-webkit-slider-thumb {
@@ -60,4 +57,9 @@ button {
   background: #252723;
   cursor: pointer;
 }
+
+.sliderReadout {
+  text-align: center;
+}
+
 /*# sourceMappingURL=styles.css.map */

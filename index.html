@@ -20,11 +20,13 @@
         <h3>Slide to change speed</h3>
         <div class="slider_speed">
             <input type="range" min="-10" max="10" value="5" class="slider" id="speed_slide">
+            <br><input type="text" id="speedReadout" class="sliderReadout" readonly='readonly' title="Speed" value="">
         </div>
         <br><br>
         <h3>Slide to turn</h3>
         <div class="slider_turn">
             <input type="range" min="-10" max="10" value="0" class="slider" id="turn_slide">
+            <br><input type="text" id="angleReadout" class="sliderReadout" readonly='readonly' title="Turning Angle" value="">
         </div>
         <div id="result"></div>
         <script src="script.js"></script>
