@@ -3,13 +3,15 @@ console.log('javascript active')
 var speed = 0
 var forward = true
 var left = false
-var turn_speed = 0
+//var turn_speed = 0
 var direction = forward
 var duration = 1 //static but can be changed for debugging
-var t
+var interval
 
 var slider_speed = document.getElementById("speed_slide");
 var turn_speed = document.getElementById("turn_slide");
+
+turn_speed.innerHTML = 0
 
 function show_video() {
     console.log('video active');
@@ -19,20 +21,23 @@ function show_video() {
 }
 
 function send_commands() {
-    if (speed > 0) {
-        direction = 'forward';
-    } else if (speed = 0){
+    console.log(turn_speed.value) //used for debugging
+    if (speed = 0){
         direction = 'stop';
         speed = 0;
         duration = 0;
-    } else if (speed < 0) {
-        direction = 'backward';
-        speed = speed * -1
-    }
-    if (turn_speed = -1){
+    } 
+    if (turn_speed.value = -1){
         direction = 'left';
-    } else {
+    } else if (turn_speed.value = 1) {
         direction = 'right';
+    } else {
+        if (speed > 0) {
+            direction = 'forward';
+        } else if (speed < 0) {
+            direction = 'backward';
+            speed = speed * -1
+        }
     }
     var bot = document.getElementById('bot-id').value
     $("#result").load("http://" + bot + ":8090/post/"+direction+"/" + speed + "/" + duration);
@@ -45,11 +50,11 @@ slider_speed.oninput = function() {
     console.log("Speed: "+document.getElementById('speedReadout').value)
 }
 turn_speed.oninput = function() {
-    turn_speed.innerHTML = this.value;
-    //console.log(turn_speed.innerHTML) //was used for debugging
-    if (turn_speed.innerHTML < 0) {
+    turn_speed.value = this.value;
+    console.log(turn_speed.value) //used for debugging
+    if (turn_speed.value < 0) {
         document.getElementById('angleReadout').value = "Left";
-    } else if (turn_speed.innerHTML > 0) {
+    } else if (turn_speed.value > 0) {
         document.getElementById('angleReadout').value = "Right";
     } else {
         document.getElementById('angleReadout').value = "Straight";
@@ -57,10 +62,10 @@ turn_speed.oninput = function() {
     console.log("Turn direction: "+document.getElementById('angleReadout').value);
 }
 function start_commands() {
-    t=setInterval(send_commands,1000);
+    interval=setInterval(send_commands,1000);
 }
 function stop_commands() {
-    clearInterval(t);
+    clearInterval(interval);
 }
 /* Links:
 https://www.w3schools.com/howto/howto_js_rangeslider.asp
