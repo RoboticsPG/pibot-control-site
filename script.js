@@ -32,9 +32,17 @@ function send_commands() {
         direction = 'backward';
         speed = document.getElementById('speedReadout').value*-1;
     } if (turn_speed.value == -1){
-        direction = 'left';
+        if (direction == 'forward') {
+            direction = 'left';
+        } else {
+            direction = 'right';
+        }
     } else if (turn_speed.value == 1) {
-        direction = 'right';
+        if (direction == 'forward') {
+            direction = 'right';
+        } else {
+            direction = 'left';
+        }
     } 
     var bot = document.getElementById('bot-id').value
     $("#result").load("http://" + bot + ":8090/post/"+direction+"/" + speed + "/" + duration);
