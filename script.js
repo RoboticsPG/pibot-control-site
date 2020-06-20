@@ -43,8 +43,8 @@ function send_commands() { //runs every second when the interval is enabled
         }
     } 
     var bot = document.getElementById('bot-id').value //gets the bot IP address from the text box
-    $("#result").load("http://" + bot + ":8090/post/"+direction+"/" + speed + "/" + duration); //background process to send commands to bot
-    console.log("http://" + bot + ":8090/post/"+direction+"/" + speed + "/" + duration) //sends url command to console for debugging
+    $("#result").load("http://" + bot + ":8090/post/"+direction+"/" + speed/10 + "/" + duration); //background process to send commands to bot
+    console.log("http://" + bot + ":8090/post/"+direction+"/" + speed/10 + "/" + duration) //sends url command to console for debugging
 }
 
 slider_speed.oninput = function() { //runs when speed slider value is changed/ when it is slid
