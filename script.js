@@ -12,7 +12,7 @@ var turn_speed = document.getElementById("turn_slide"); //imports the turn slide
 function show_video() {
     console.log('video active'); //debugging message
     var bot = document.getElementById("bot-id").value; //gets the bot IP address for the video
-    document.getElementById('camera_feed').innerHTML= '<iframe src="http://'+bot+':8081" alt="camera_feed">'; //initiaises camera feed
+    document.getElementById('camera_feed').innerHTML= '<img src="http://'+bot+':8081" alt="camera_feed">'; //initiaises camera feed
     document.getElementById('camera_feed').style.maxHeight = "640px"; //sets max size so it doesn't take over the page
 }
 
