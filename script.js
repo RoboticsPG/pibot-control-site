@@ -3,7 +3,7 @@ console.log('javascript active') //makes sure javascript is working
 //sets variables that need to be global
 var turn_speed = 0
 var direction = 'forward'
-var duration = 1.5 //static but can be changed for debugging
+var duration = 0.5 //static but can be changed for debugging
 var interval
 
 var slider_speed = document.getElementById("speed_slide"); //imports the speed slider
