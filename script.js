@@ -69,6 +69,7 @@ function start_commands() { //function to start sending commands every second
 }
 function stop_commands() {
     clearInterval(interval); //stops the sending of commands
+    $("#result").load("http://" + bot + ":8090/post/"+'stop'+"/" + speed/10 + "/" + duration); //stops the bot moving when button is pressed
 }
 /* Links:
 https://www.w3schools.com/howto/howto_js_rangeslider.asp
