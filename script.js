@@ -3,7 +3,7 @@ console.log('javascript active') //makes sure javascript is working
 //sets variables that need to be global
 var turn_speed = 0
 var direction = 'forward'
-var duration = 0.2 //static but can be changed for debugging
+var duration = 1 //static but can be changed for debugging
 var interval
 
 var slider_speed = document.getElementById("speed_slide"); //imports the speed slider
@@ -65,7 +65,7 @@ turn_speed.oninput = function() {
     console.log("Turn direction: "+/*document.getElementById('angleReadout').value*/turn_speed.innerHTML);
 }
 function start_commands() { //function to start sending commands every second
-    interval=setInterval(send_commands,1000); //sets interval to send command every second
+    interval=setInterval(send_commands,500); //sets interval to send command every second
 }
 function stop_commands() {
     clearInterval(interval); //stops the sending of commands
