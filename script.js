@@ -71,6 +71,7 @@ function stop_commands() {
     clearInterval(interval); //stops the sending of commands
     var bot = document.getElementById('bot-id').value //gets the bot IP address from the text box
     $("#result").load("http://" + bot + ":8090/post/"+'stop'+"/" + speed/10 + "/" + duration); //stops the bot moving when button is pressed
+    console.log("Bot halted")
 }
 /* Links:
 https://www.w3schools.com/howto/howto_js_rangeslider.asp
