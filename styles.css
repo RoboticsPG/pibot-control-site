@@ -88,7 +88,7 @@ button:hover{
 
 .MoveButtons{
   margin-bottom: 30px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 #startMovement{
@@ -109,7 +109,7 @@ button:hover{
 
 .camFeed {
   margin-top: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   display: none;
   transition: max-height 1s;
   overflow: hidden;
