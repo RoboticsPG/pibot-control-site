@@ -13,7 +13,8 @@ function show_video() {
     console.log('video active'); //debugging message
     var bot = document.getElementById("bot-id").value; //gets the bot IP address for the video
     document.getElementById('camera_feed').innerHTML= '<img src="http://'+bot+':8081" alt="camera_feed">'; //initiaises camera feed
-    document.getElementById('camera_feed').style.maxHeight = "640px"; //sets max size so it doesn't take over the page
+    document.getElementById('camera_feed').style.display = "inline-block"; //sets max size so it doesn't take over the page
+    window.location="#speedReadout"
 }
 
 function send_commands() { //runs every second when the interval is enabled
@@ -23,7 +24,7 @@ function send_commands() { //runs every second when the interval is enabled
         direction = 'stop';
         //speed = 0;
         //duration = 0;
-    } 
+    }
     if (document.getElementById('speedReadout').value > 0) { //if the speed is positive
         direction = 'forward';
     } else if (document.getElementById('speedReadout').value < 0) { //if the speed is negative
@@ -41,7 +42,7 @@ function send_commands() { //runs every second when the interval is enabled
         } else {
             direction = 'left';
         }
-    } 
+    }
     var bot = document.getElementById('bot-id').value //gets the bot IP address from the text box
     $("#result").load("http://" + bot + ":8090/post/"+direction+"/" + speed/10 + "/" + duration); //background process to send commands to bot
     console.log("http://" + bot + ":8090/post/"+direction+"/" + speed/10 + "/" + duration) //sends url command to console for debugging
@@ -73,6 +74,7 @@ function stop_commands() {
     $("#result").load("http://" + bot + ":8090/post/"+'stop'+"/" + speed/10 + "/" + duration); //stops the bot moving when button is pressed
     console.log("Bot halted")
 }
+
 /* Links:
 https://www.w3schools.com/howto/howto_js_rangeslider.asp
 */
