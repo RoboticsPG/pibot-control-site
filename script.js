@@ -70,9 +70,18 @@ function start_commands() { //function to start sending commands every second
 }
 function stop_commands() {
     clearInterval(interval); //stops the sending of commands
+    interval = setInterval(stop_bot, 1000);
+    x = 0;
+}
+
+function stop_bot() {
     var bot = document.getElementById('bot-id').value //gets the bot IP address from the text box
     $("#result").load("http://" + bot + ":8090/post/"+'stop'+"/" + speed/10 + "/" + duration); //stops the bot moving when button is pressed
-    console.log("Bot halted")
+    console.log("Bot halted");
+    console.log(x);
+    if (++x === 5){
+        clearInterval(interval);
+    }
 }
 
 /* Links:
