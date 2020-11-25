@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>RP Pi-Bot Control</title>
+        <title>RP Pi-Bot Control</title> 
         <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
         <meta charset = "UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!--Imports the stylesheet and fonts-->
         <link rel = "stylesheet" type = "text/css" href= "styles.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 
@@ -18,36 +19,39 @@
 
         <h3></h3>
         <div class="ipInput">
-          <input type="text" placeholder="Enter the bot IP Address to get started..." id="bot-id"
-          ><div><button id="buttonCamera" name="btnVideo" onclick="show_video()">Start Camera</button></div>
+          <!--Textbox for IP Address to be entered for bot. Stored as bot-id-->
+          <input type="text" placeholder="Enter the bot IP Address to get started..." id="bot-id">
+          <div>
+            <!--Button that loads Camera view on click. Runs JS show_video()-->
+            <button id="buttonCamera" name="btnVideo" onclick="show_video()">Start Camera</button>
+          </div>
         </div>
 
+        <!--Provides a place to insert the video feed-->
         <div id="camera_feed" class="camFeed"></div>
 
         <div class="MoveButtons">
+          <!--Buttons that run the start and stop scripts-->
           <button id="startMovement" name="startMove" onclick="start_commands()">Start Movement</button>
           <button id="stopMovement" name="stopMove" onclick="stop_commands()">Stop Movement</button>
         </div>
 
         <h3>Slide to change speed</h3>
+        <!--Slider and readout for speed-->
         <div class="slider_speed">
             <input type="range" min="-10" max="10" value="5" class="slider" id="speed_slide">
             <input type="text" id="speedReadout" class="sliderReadout" readonly='readonly' title="Speed" placeholder="5" value="">
         </div>
         <br><br>
         <h3>Slide to turn</h3>
+        <!--Slider for turning with 3 steps-->
         <div class="slider_turn">
             <input type="range" min="-1" max="1" value="0" class="slider turn" id="turn_slide">
           <input type="text" id="angleReadout" class="sliderReadout direction" readonly='readonly' title="Turning Angle" placeholder="Straight" value="">
         </div>
         <div id="result"></div>
         
-
-
-
-
-
-
     </body>
+    <!--Script that functions are contained in-->
     <script src="script.js"></script>
 </html>
